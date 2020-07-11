@@ -20,7 +20,7 @@ class App extends Component {
     super();
     this.state = {
       string: "hi",
-      monsters: [],
+      robots: [],
       searchField: "",
       authentics: [
         {
@@ -42,7 +42,7 @@ class App extends Component {
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((users) => this.setState({ monsters: users }));
+      .then((users) => this.setState({ robots: users }));
   }
   // handleChange(e) {
   //   this.setState({ searchField: e.target.value });
@@ -51,10 +51,10 @@ class App extends Component {
     this.setState({ searchField: e.target.value });
   };
   render() {
-    const monsters = this.state.monsters;
+    const robots = this.state.robots;
     const searchField = this.state.searchField;
-    const filteredMonsters = monsters.filter((monster) =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    const filteredrobots = robots.filter((robot) =>
+      robot.name.toLowerCase().includes(searchField.toLowerCase())
     );
     return (
       <div className="App">
@@ -67,7 +67,7 @@ class App extends Component {
           placeholder="Search Robots!"
           handleChange={this.handleChange}
         />
-        <CardList monsters={filteredMonsters} />
+        <CardList robots={filteredrobots} />
         {/* {this.state.authentics.map((authentic) => (
           <h1 key={authentic.id}>{authentic.name}</h1>
         ))} */}
