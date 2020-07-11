@@ -63,6 +63,7 @@ class App extends Component {
           placeholder="Search Robots!"
           onChange={(e) => this.setState({ searchField: e.target.value })}
         /> */}
+        <h1>Robots Rolodex!</h1>
         <SearchBox
           placeholder="Search Robots!"
           handleChange={this.handleChange}
